@@ -60,9 +60,32 @@ namespace DeckSwipe {
 			GameStartOverlay.StartSequence(progressStorage.Progress.daysPassed, daysLastRun);
 		}
 
-		
-	
+		public void RestartGame() {
+			progressStorage.Save();
+			daysLastRun = progressStorage.Progress.daysPassed - daysPassedPreviously;
+			cardDrawQueue.Clear();
+			StartGame();
+		}
+
+		private void StartGameplayLoop() {
+			Stats.ResetStats();
+			ProgressDisplay.SetDaysSurvived(0);
+			DrawNextCard();
+		}
+
 		public void DrawNextCard() {
+			if (Stats.Coal == 0) {
+				SpawnCard(cardStorage.SpecialCard("gameover_coal"));
+			}
+			else if (Stats.Food == 0) {
+				SpawnCard(cardStorage.SpecialCard("gameover_food"));
+			}
+			else if (Stats.Health == 0) {
+				SpawnCard(cardStorage.SpecialCard("gameover_health"));
+			}
+			else if (Stats.Hope == 0) {
+				SpawnCard(cardStorage.SpecialCard("gameover_hope"));
+			}
 			
 			else if (Stats.true_end == 1)
 			{
