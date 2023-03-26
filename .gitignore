@@ -60,3 +60,5 @@ install.sh
 
 # GNU nano/Vim swap buffer
 *.swp
+*.meta
+*.dll

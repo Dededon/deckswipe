@@ -8,15 +8,16 @@ namespace DeckSwipe.CardModel {
 		private readonly IFollowup followup;
 
 		public ActionOutcome() {
-			statsModification = new StatsModification(0, 0, 0, 0);
+			statsModification = new StatsModification(0, 0, 0, 0, 0);
 		}
 
 		public ActionOutcome(int coalMod, int foodMod, int healthMod, int hopeMod) {
-			statsModification = new StatsModification(coalMod, foodMod, healthMod, hopeMod);
+			statsModification = new StatsModification(coalMod, foodMod, healthMod, hopeMod, 0);
 		}
 
-		public ActionOutcome(int coalMod, int foodMod, int healthMod, int hopeMod, IFollowup followup) {
-			statsModification = new StatsModification(coalMod, foodMod, healthMod, hopeMod);
+		public ActionOutcome(int coalMod, int foodMod, int healthMod, int hopeMod
+			, IFollowup followup) {
+			statsModification = new StatsModification(coalMod, foodMod, healthMod, hopeMod, 0);
 			this.followup = followup;
 		}
 

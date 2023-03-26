@@ -1,14 +1,14 @@
 {
-    "id": "trueend_exodus",
+    "id": "gameover_exodus",
     "characterId": -1,
-    "cardText": "Finally you did escape.",
+    "cardText": "You escaped from the labyrinth.",
     "leftAction": {
-        "text": "Congratulations!",
+        "text": "",
         "followup": [],
         "specialFollowup": []
     },
     "rightAction": {
-        "text": "Congratulations",
+        "text": "",
         "followup": [],
         "specialFollowup": []
     }

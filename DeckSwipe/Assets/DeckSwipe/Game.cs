@@ -4,6 +4,7 @@ using DeckSwipe.Gamestate;
 using DeckSwipe.Gamestate.Persistence;
 using DeckSwipe.World;
 using Outfrost;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 namespace DeckSwipe {
@@ -85,6 +86,10 @@ namespace DeckSwipe {
 			else if (Stats.Hope == 0) {
 				SpawnCard(cardStorage.SpecialCard("gameover_hope"));
 			}
+			else if (Stats.true_end == 1)
+			{
+                SpawnCard(cardStorage.SpecialCard("gameover_exodus"));
+            }
 			else {
 				IFollowup followup = cardDrawQueue.Next();
 				ICard card = followup?.Fetch(cardStorage) ?? cardStorage.Random();
